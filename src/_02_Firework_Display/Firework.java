@@ -1,5 +1,6 @@
 package _02_Firework_Display;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
@@ -50,39 +51,43 @@ public class Firework {
 	public void updateSparks() {
 		// 8. Uncomment this code. See if you can understand what it is doing.
 
-		// for(int i = 0; i < sparks.length; i++) {
-		//
-		// Spark s = sparks[i];
-		// s.x += s.xVelocity;
-		// s.y += s.yVelocity;
-		// s.yVelocity += GRAVITY;
-		//
-		// if(s.yVelocity >= 0 && !s.fire) {
-		// Random r = new Random();
-		// s.xVelocity = r.nextInt(40) - 20;
-		// s.yVelocity += -r.nextInt(10) - 5;
-		// s.size = r.nextInt(7) + 2;
-		// s.fire = true;
-		// }
-		//
-		// if(s.y >= FireworkDisplay.HEIGHT) {
-		// s.dead = true;
-		// }
-		// }
-		//
-		// for(int i = 0; i < sparks.length; i++) {
-		// if(!sparks[i].dead) {
-		// dead = false;
-		// break;
-		// }
-		// dead = true;
-		// }
+		 for(int i = 0; i < Array.length; i++) {
+		
+		 Spark s = Array[i];
+		 s.x += s.xVelocity;
+		 s.y += s.yVelocity;
+		 s.yVelocity += GRAVITY;
+		
+		 if(s.yVelocity >= 0 && !s.fire) {
+		 Random r = new Random();
+		 s.xVelocity = r.nextInt(40) - 20;
+		 s.yVelocity += -r.nextInt(10) - 5;
+		 s.size = r.nextInt(7) + 2;
+		 s.fire = true;
+		 }
+		
+		 if(s.y >= FireworkDisplay.HEIGHT) {
+		 s.dead = true;
+		 }
+		 }
+		
+		 for(int i = 0; i < Array.length; i++) {
+		 if(!Array[i].dead) {
+		 dead = false;
+		 break;
+		 }
+		 dead = true;
+		 }
 	}
 
 	public void drawSparks(Graphics g) {
 		// 5. Iterate through each spark
 		
 		for (int i = 0; i < Array.length; i++) {
+			
+	    
+		g.setColor(Array[i].color);
+		g.fillOval(Array[i].x, Array[i].y, Array[i].size, Array[i].size);
 			
 		}
 		// 6. Set the color to the spark's color with g.setColor()
