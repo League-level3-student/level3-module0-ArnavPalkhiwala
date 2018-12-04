@@ -15,28 +15,55 @@ public class MoreArrayFun {
 
 	// 2. Write a method that takes an array of Strings and prints all the Strings
 	// in the array.
-	
-	String[] string = new String[10];
-	
-	void arrayStrings() {
-		
+
+	static void arrayStrings(String[] string) {
+
 		for (int i = 0; i < string.length; i++) {
-			
-			System.out.println(i);
-			
+
+			System.out.println(string[i]);
+
 		}
 
 	}
 	// 3. Write a method that takes an array of Strings and prints all the Strings
 	// in the array
-	// in reverse order.
+	// in reverse order..
+
+	static void reverseString(String[] reverse) {
+
+		for (int i = reverse.length; i < 0; i--) {
+
+			System.out.println(reverse[i]);
+
+		}
+
+	}
 
 	// 4. Write a method that takes an array of Strings and prints every other
 	// String in the array.
+
+	static void everyother(String[] everyother) {
+
+		for (int i = 0; i < everyother.length; i = i + 2) {
+
+			System.out.println(everyother[i]);
+
+		}
+	}
 
 	// 5. Write a method that takes an array of Strings and prints all the Strings
 	// in the array
 	// in a completely random order. Almost every run of the program should result
 	// in a different order.
+
+	static void allRandom(String[] allrandom) {
+		
+		for (int i = 0; i < allrandom.length; i++) {
+
+			System.out.println(allrandom[i]);
+
+		}
+
+	}
 
 }
